@@ -1,0 +1,63 @@
+/* Base styles for both message types */
+.message-container li {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Right-aligned messages */
+.message-right {
+    justify-content: flex-end;
+}
+
+.message-right .message-box {
+    display: inline-block;
+    margin-left: auto; /* Automatically push the message box to the right */
+    background-color: rgb(132, 198, 132);
+    color: #fff;
+    border-top-right-radius: 0;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 80%; /* Limits the width of the message box to 80% */
+    word-wrap: break-word;
+}
+
+/* Left-aligned messages */
+.message-left {
+    justify-content: flex-start;
+}
+
+.message-left .message-box {
+    background-color: #f1f1f1;
+    color: #333;
+    border-top-left-radius: 0;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 80%; /* Limits the width of the message box to 80% */
+    word-wrap: break-word;
+}
+
+/* Time and name styling */
+.message-box span {
+    display: block;
+    font-size: 12px;
+    color: black;
+    margin-top: 5px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .message-right .message-box,
+    .message-left .message-box {
+        max-width: 90%; /* Increases width to 90% for smaller screens */
+        margin-left: 0; /* Removes left margin on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .message-right .message-box,
+    .message-left .message-box {
+        max-width: 100%; /* Full width on very small screens */
+        padding: 8px;
+    }
+}
